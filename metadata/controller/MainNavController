@@ -1,0 +1,99 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainNavController"
+    },
+    "id": "ExtBox1-ext-gen17190",
+    "designerId": "81f48407-d0cc-485d-b3bb-9c9b2f641a43",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onStep1SubmitTap",
+                "fn": "onStep1SubmitTap",
+                "implHandler": [
+                    "button.up('navigationview').push({",
+                    "    xtype: 'step2',",
+                    "    title: 'Step 2'",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "step1 button"
+            },
+            "designerId": "40b17432-dc58-48a1-980c-ecb740fc51be"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onStep2ButtonTap",
+                "fn": "onStep2ButtonTap",
+                "implHandler": [
+                    "button.up('navigationview').push({",
+                    "    xtype: 'step3',",
+                    "    title: 'Step 3'",
+                    "});"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "step2 button"
+            },
+            "designerId": "81a2195b-a80e-4001-b96b-9f1064054482"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onStep3ButtonTap",
+                "fn": "onStep3ButtonTap",
+                "implHandler": [
+                    "var mainNav = button.up('navigationview'),",
+                    "    num1 = mainNav.child('step1').getValues().number1,",
+                    "    num2 = mainNav.child('step2').getValues().number2,",
+                    "    operation = mainNav.child('step3').getValues().operation,",
+                    "    result;",
+                    "",
+                    "switch (operation) {",
+                    "    case 'add':",
+                    "        result = num1 + num2;",
+                    "        break;    ",
+                    "    case 'subtract':",
+                    "        result = num1 - num2;",
+                    "        break;    ",
+                    "    case 'multiply':",
+                    "        result = num1 * num2;",
+                    "        break;    ",
+                    "    case 'divide':",
+                    "        result = num1 / num2;",
+                    "        break;",
+                    "}",
+                    "",
+                    "Ext.Msg.alert('Your result is: ' + result);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "step3 button"
+            },
+            "designerId": "d1039a6b-1e53-41f7-a49e-6e48ce6e47bc"
+        }
+    ]
+}

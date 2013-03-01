@@ -1,0 +1,106 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Step3Panel",
+        "designer|userAlias": "step3"
+    },
+    "id": "ExtBox1-ext-gen13640",
+    "designerId": "59837de6-d1e1-4301-abd7-e5769a45fd27",
+    "cn": [
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet",
+                "title": "Choose an operation"
+            },
+            "designerId": "b58b2f89-d6a4-42de-8122-1b7abc0160c4",
+            "cn": [
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton",
+                        "label": "Add",
+                        "name": "operation",
+                        "value": "add",
+                        "checked": true
+                    },
+                    "designerId": "e61a6df2-634d-4464-8c06-6285d493350c"
+                },
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton1",
+                        "label": "Subtract",
+                        "name": "operation",
+                        "value": "subtract"
+                    },
+                    "designerId": "8284a14c-d975-49eb-a07c-d49615ecd92f"
+                },
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton2",
+                        "label": "Multiply",
+                        "name": "operation",
+                        "value": "multiply"
+                    },
+                    "designerId": "334135b9-d568-4ff5-97ad-3af412df1cef"
+                },
+                {
+                    "type": "radiofield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyRadioButton3",
+                        "label": "Divide",
+                        "name": "operation",
+                        "value": "divide"
+                    },
+                    "designerId": "c367e929-b517-4b82-a930-3f78e10667c4"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton",
+                "ui": "confirm",
+                "text": "Calculate!"
+            },
+            "designerId": "5577410c-3796-43fe-9f3b-e0523e13025e"
+        }
+    ]
+}

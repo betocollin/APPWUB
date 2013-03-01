@@ -1,0 +1,59 @@
+{
+    "type": "formpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Step2Panel",
+        "designer|userAlias": "step2"
+    },
+    "id": "ExtBox1-ext-gen13105",
+    "designerId": "2f8f8011-b4fc-43f8-8f35-2318b3dd02bf",
+    "cn": [
+        {
+            "type": "fieldset",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyFieldSet",
+                "title": "Enter another number"
+            },
+            "designerId": "9647ecee-4587-4d56-a72c-51c256313ace",
+            "cn": [
+                {
+                    "type": "numberfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberField",
+                        "label": null,
+                        "name": "number2"
+                    },
+                    "designerId": "344d2b2f-f74a-4e84-9459-4055bf6a2e4b"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyButton",
+                "ui": "forward",
+                "text": "Next"
+            },
+            "designerId": "7090a782-d631-4ce4-994d-230e48a6bf82"
+        }
+    ]
+}

@@ -18,31 +18,20 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    models: [
-        'CinemasModel',
-        'HomeListModel'
-    ],
-    stores: [
-        'CinemaStore',
-        'HomeListStore'
-    ],
     views: [
-        'StablishmentView',
-        'MyNavigationView',
-        'HomePanel',
-        'CinemasView',
-        'TestsPanel',
-        'mapview'
+        'Step1Panel',
+        'Step2Panel',
+        'Step3Panel',
+        'MainNav'
     ],
     name: 'MyApp',
     controllers: [
-        'MainController',
-        'MapControllers'
+        'MainNavController'
     ],
 
     launch: function() {
 
-        Ext.create('MyApp.view.MyNavigationView', {fullscreen: true});
+        Ext.create('MyApp.view.MainNav', {fullscreen: true});
     }
 
 });
