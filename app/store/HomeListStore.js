@@ -13,43 +13,32 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.store.HomeListStore', {
+Ext.define('MyApp.store.HomeListStore', {
     extend: 'Ext.data.Store',
-    alias: 'store.HomeListStore',
 
     requires: [
-        'AppBarbados.model.HomeListModel'
+        'MyApp.model.HomeListModel'
     ],
 
     config: {
         data: [
             {
-                atractionId: 1,
-                name: 'Restaurants',
-                image: 'resources/images/icn-restaurants@2x.png'
+                name: 'Restaurants'
             },
             {
-                atractionId: 2,
-                name: 'Cinemas',
-                image: 'resources/images/icn-cinemas@2x.png'
+                name: 'Cinemas'
             },
             {
-                atractionId: 3,
-                name: 'Events',
-                image: 'resources/images/icn-events@2x.png'
+                name: 'Events'
             },
             {
-                atractionId: 4,
-                name: 'Crop Over Bands',
-                image: 'resources/images/icn-cropoverbands@2x.png'
+                name: 'Crop Over Bands'
             },
             {
-                atractionId: 5,
-                name: 'Concerts',
-                image: 'resources/images/icn-concerts@2x.png'
+                name: 'Concerts'
             }
         ],
-        model: 'AppBarbados.model.HomeListModel',
+        model: 'MyApp.model.HomeListModel',
         storeId: 'HomeListStore',
         proxy: {
             type: 'ajax',

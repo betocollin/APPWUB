@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.controller.MainController', {
+Ext.define('MyApp.controller.MainController', {
     extend: 'Ext.app.Controller',
 
     config: {
@@ -26,12 +26,6 @@ Ext.define('AppBarbados.controller.MainController', {
             },
             "button#btnCinemas": {
                 tap: 'onBtnCinemasTap'
-            },
-            "dataview#liststyleone": {
-                itemtap: 'onliststyleoneItemTap1'
-            },
-            "dataview#listOfMovies": {
-                itemtap: 'onlistOfMoviesItemTap'
             }
         }
     },
@@ -61,141 +55,6 @@ Ext.define('AppBarbados.controller.MainController', {
             title: 'Cinemas'
         }
         );
-    },
-
-    onliststyleoneItemTap1: function(dataview, index, target, record, e, options) {
-        //Ext.Msg.alert('Selected!', 'You selected ' + record.get('name'));
-        var myView = Ext.getCmp('my-navigation-view');
-
-        myView.push(
-        {
-            xtype: 'stablishmentview',
-            title: record.get('name'),
-            scrollable: true,
-            items: 
-            [
-            {
-                xtype: 'image',
-                height: 100,
-                width: 320,
-                docked: 'top',
-                src: record.get('imageUrl'),
-                style: 'padding-bottom: 10px'
-            },
-            {
-                //style: 'padding: 10px 15px 0',
-                style: 'margin-top: -7px',
-                xtype: 'label',
-                html: '<a href="mailto:' + record.get('email') + '" title="Send Email" style="font-size: 12px; color: #333; text-decoration: none">E-mail: ' + record.get('email') + '</a>'
-            },
-            {
-                //style: 'padding: 0 15px',
-                xtype: 'label',
-                html: '<a href="tel:' + record.get('phone') + '" title="Telephone" style="font-size: 12px; color: #333; text-decoration: none">Telephone: ' + record.get('phone') + '</a>',
-            },
-            {
-                //style: 'padding: 0 15px',
-                scrollable: false,
-                xtype: 'label',
-                itemid: 'lblAddress',
-                html: '<a href="#" title="Address" style="font-size: 12px; color: #333; text-decoration: none">Address: ' + record.get('address') + '</a>'
-            },
-            {
-                style: 'padding: 5px 0px; width: 50px; margin: 0 10px; font-size: 12px; background-image: none;background-color: #cd0000; color: white;border: none;float: right;top: 15px;position: absolute;right: 5px;',
-                scrollable: false,
-                xtype: 'button',
-                html: 'MAP',
-                itemid: 'btnAddressMap',
-                listeners: {
-                    tap: function() {
-                        myView.push(
-                        {
-                            xtype: 'mapview',
-                            title: record.get('name') + ' Map',
-                            scrollable: false
-                            //data: record.getData()
-                        }
-                        );
-                    }
-                }
-            },
-            {
-                style: 'padding: 5px 0px; width: 50px; margin: 5px 10px; font-size: 12px; background-image: none;background-color: #cd0000; color: white;border: none;float: right;top: 43px;position: absolute;right: 5px;',
-                scrollable: false,
-                xtype: 'button',
-                html: 'CALL',
-                itemid: 'btnPhoneCall',
-                listeners: {
-                    tap: function() {
-                        Ext.Msg.alert('This will call the number:', record.get('phone'));
-                    }
-                }
-
-            },
-            {
-                style: 'padding: 10px; text-align: center; font-size: 18px',
-                xtype: 'label',
-                html: 'Showtimes today:'
-            },
-            {
-                xtype: 'dataview',
-                height: '420px',
-                itemId: 'listOfMovies',
-                layout: {
-                    type: 'fit'
-                },
-                itemTpl: [
-                '<div style="padding: 15px 10px; border-bottom: 1px solid #ddd;">',
-                '<img src="{imageUrl}" style="float:left; width: 50px; heigth: 100px; margin-right: 10px" />',
-                '<div style="float: left; ">{title}</div><br />',
-                //'<div style="float:left; font-size: 12px;">{titl'+'e'+'}</div>'
-                '{showTimesToday}',
-                '<div style="clear: both"></div>',
-                '</div>'
-                ],
-                scrollable: false,
-                //store: 'MovieStore'
-                data: record.get('movies')
-            }
-
-            ]
-        }
-        );
-    },
-
-    onlistOfMoviesItemTap: function(dataview, index, target, record, e, options) {
-        var myView = Ext.getCmp('my-navigation-view');
-
-        console.log(record);
-
-        myView.push(
-        {
-            xtype: 'MovieView',
-            title: record.get('title'),
-            scrollable: true,
-            items: 
-            [
-            {
-                style: 'padding: 0 15px',
-                scrollable: true,
-                xtype: 'label',
-                html: '<div style="font-size:14px;padding-top: 10px;color: #555;"><img src="' + record.get('imageUrl') + '" style="float:left;width: 120px;margin-right: 10px;" />' + record.get('description') + '</div>'
-            },
-            {
-                style: 'padding: 10px; text-align: center; font-size: 18px',
-                xtype: 'label',
-                //html: 'Watch Trailer:<div class="video youtube"><iframe class="youtube-player" type="text/html" width="240" height="160" src="http://www.youtube.com/embed/MLAvdQF7Ypo" frameborder="0"></iframe></div>'
-                html: '<a href="' +record.get('trailerUrl') + '"><div class="little-button" style="width: 100px; text-decoration: none">Watch Trailler</div></a>'
-            },
-            {
-                style: 'clear: both; padding: 10px; text-align: center; font-size: 18px',
-                xtype: 'label',
-                html: record.get('showTimesWeek')
-            }
-            ]
-
-
-        });
     }
 
 });

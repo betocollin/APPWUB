@@ -6,26 +6,9 @@ font-size: 18px
 
 .x-list-normal .x-list-item-label {
 /*	background: url(http://localhost/SenchaTouch/iPhoneSecond/resources/images/bg-gradient-tableview-cel.jpg) repeat !important;*/
-	/*height: 76px;*/
+	height: 76px;
 }
 
 .x-list-item.x-item-selected , .x-list-item.x-item-selected {
 	color: #C00 !important;
-}
-
-.little-button {
--webkit-border-radius: 0.4em;
-border-radius: 0.4em;
-padding: 5px 0px;
-width: 45px;
-margin: 2px 5px 3px 0;
-font-size: 12px;
-background-image: none;
-background-color: rgb(205, 0, 0);
-color: white;
-border: none;
-float: left;
-text-align: center;
--webkit-text-align: center;
-font-weight: bold;
 }

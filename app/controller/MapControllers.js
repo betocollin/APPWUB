@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.controller.MapControllers', {
+Ext.define('MyApp.controller.MapControllers', {
     extend: 'Ext.app.Controller',
 
     config: {
@@ -27,27 +27,10 @@ Ext.define('AppBarbados.controller.MapControllers', {
     onMapCenterChange: function(map, gmap, center, options) {
         var image = 'http://www.iplanit.ie/wp-content/uploads/2012/10/olympus-logo.jpeg';
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(13.083031,-59.566755),
+            position: new google.maps.LatLng(53.273033,-6.208501),
             title : 'testing',
             map: gmap,
             icon: image
-        });
-
-
-        var image2 = 'http://www.iplanit.ie/wp-content/uploads/2012/10/limegrove-icon-logo.gif';
-        var marker2 = new google.maps.Marker({
-            position: new google.maps.LatLng(13.204008,-59.546956),
-            title : 'testing',
-            map: gmap,
-            icon: image2
-        });
-
-
-        //CLICK EVENT
-        var infoWindow = new google.maps.InfoWindow();
-        google.maps.event.addListener(marker, "click", function() {
-            infoWindow.setContent('<iframe src="http://www.youtube.com/embed/kfVsfOSbJY0" frameborder="0" allowfullscreen></iframe>');
-            infoWindow.open(gmap, marker);
         });
     }
 

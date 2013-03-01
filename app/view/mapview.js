@@ -13,17 +13,15 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.view.mapview', {
+Ext.define('MyApp.view.mapview', {
     extend: 'Ext.Map',
     alias: 'widget.mapview',
 
-    requires: [
-        'AppBarbados.view.override.mapview'
-    ],
-
     config: {
+        fullscreen: false,
         id: 'mapview',
-        itemId: 'mapview'
+        itemId: 'mapview',
+        useCurrentLocation: true
     }
 
 });

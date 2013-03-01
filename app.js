@@ -19,7 +19,7 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'cinema',
+        'CinemasModel',
         'HomeListModel'
     ],
     stores: [
@@ -28,19 +28,13 @@ Ext.application({
     ],
     views: [
         'StablishmentView',
+        'MyNavigationView',
         'HomePanel',
         'CinemasView',
         'TestsPanel',
-        'MyTabPanel',
-        'mapview',
-        'RestaurantsList',
-        'CropOverBandsList',
-        'ConcertsList',
-        'EventsList',
-        'MovieView'
+        'mapview'
     ],
-    icon: 'resources/images/d-digicel.gif',
-    name: 'AppBarbados',
+    name: 'MyApp',
     controllers: [
         'MainController',
         'MapControllers'
@@ -48,7 +42,7 @@ Ext.application({
 
     launch: function() {
 
-        Ext.create('AppBarbados.view.MyTabPanel', {fullscreen: true});
+        Ext.create('MyApp.view.MyNavigationView', {fullscreen: true});
     }
 
 });

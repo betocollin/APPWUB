@@ -13,13 +13,17 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.view.TestsPanel', {
+Ext.define('MyApp.view.TestsPanel', {
     extend: 'Ext.Panel',
-    alias: 'widget.testspanel',
 
     config: {
-        id: 'testspanel',
-        itemId: 'testspanel'
+        items: [
+            {
+                xtype: 'label',
+                html: '<a href="mailto:betocollin@gmail.com">Email</a>',
+                style: 'padding: 10px'
+            }
+        ]
     }
 
 });

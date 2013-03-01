@@ -13,21 +13,13 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.model.HomeListModel', {
+Ext.define('MyApp.model.HomeListModel', {
     extend: 'Ext.data.Model',
 
     config: {
-        idProperty: 'atractionId',
         fields: [
             {
-                name: 'atractionId',
-                type: 'int'
-            },
-            {
                 name: 'name'
-            },
-            {
-                name: 'image'
             }
         ]
     }

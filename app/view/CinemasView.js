@@ -13,41 +13,79 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.view.CinemasView', {
+Ext.define('MyApp.view.CinemasView', {
     extend: 'Ext.form.Panel',
     alias: 'widget.cinemas',
 
     config: {
-        scrollable: false,
         items: [
             {
-                xtype: 'dataview',
-                itemId: 'liststyleone',
-                minHeight: 420,
+                xtype: 'list',
+                docked: 'top',
+                height: '420px',
+                itemId: 'mylist',
+                layout: {
+                    type: 'fit'
+                },
                 itemTpl: [
-                    '<div style="padding: 15px 10px; border-bottom: 1px solid #ddd;">',
-                    '<img src="{logoUrl}" style="float:left; width: 50px; heigth: 50px; margin-right: 10px" />',
+                    '<img src="{logourl}" style="float:left; width: 50px; heigth: 50px; margin-right: 10px" />',
                     '<div style="float: left; ">{name}</div><br />',
                     '<div style="float:left; font-size: 12px;">{address}</div>',
-                    '<div style="clear: both"></div>',
-                    '</div>'
+                    '<div style="clear: both"></div>'
                 ],
                 store: 'CinemaStore'
-            },
+            }
+        ],
+        listeners: [
             {
-                xtype: 'panel',
-                centered: true,
-                docked: 'top',
-                html: '<img src="resources/images/reggaebanner@2x.jpg" width="257" height="96" /><div style="margin-right: 5px; padding-bottom: 3px">Click outside this box to close Ad</div>',
-                left: 25,
-                style: 'top: 100px !important; left: 25px !important;  width: 269px; font-size: 12px; text-align: center; -webkit-box-shadow: none; z-index: 10 !important; background-color: black;font-weight: bold;',
-                top: 100,
-                zIndex: 10,
-                hideOnMaskTap: true,
-                modal: true,
-                scrollable: false
+                fn: 'onMylistSelect',
+                event: 'select',
+                delegate: '#mylist'
             }
         ]
+    },
+
+    onMylistSelect: function(dataview, record, options) {
+        //Ext.Msg.alert('Selected!', 'You selected ' + record.get('name'));
+        var myView = Ext.getCmp('my-navigation-view');
+
+        myView.push(
+        {
+            xtype: 'stablishmentview',
+            title: record.get('name'),
+            scrollable: false,
+            items: 
+            [
+            {
+                xtype: 'image',
+                height: 100,
+                width: 320,
+                docked: 'top',
+                src: record.get('imageurl'),
+                scrollable: false,
+                style: 'padding-bottom: 10px'
+            },
+            {
+                style: 'padding: 0 10px',
+                scrollable: false,
+                xtype: 'label',
+                html: '<a href="mailto:' + record.get('email') + '" title="Send Email" style="font-size: 12px; color: #333; text-decoration: none">E-mail: ' + record.get('email') + '</a>'
+            },
+            {
+                style: 'padding: 0 10px',
+                scrollable: false,
+                xtype: 'label',
+                html: '<a href="tel:' + record.get('phone') + '" title="Telephone" style="font-size: 12px; color: #333; text-decoration: none">Telephone: ' + record.get('phone') + '</a>'
+            },
+            {
+                style: 'padding: 0 10px',
+                scrollable: false,
+                xtype: 'label',
+                html: '<a href="tel:' + record.get('address') + '" title="Address" style="font-size: 12px; color: #333; text-decoration: none">Address: ' + record.get('address') + '</a>'
+            }
+            ]
+        }
+        );
     }
 
 });

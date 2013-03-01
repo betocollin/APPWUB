@@ -13,14 +13,66 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('AppBarbados.view.HomePanel', {
+Ext.define('MyApp.view.HomePanel', {
     extend: 'Ext.form.Panel',
     alias: 'widget.homepanel',
 
     config: {
-        layout: {
-            type: 'card'
-        }
+        items: [
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '46px',
+                id: 'btnBannerAd',
+                style: 'background: url(resources/images/top-example-ad.jpg) repeat; -webkit-border-radius: 0'
+            },
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '77px',
+                id: 'btnRestaurants',
+                style: 'background: url(resources/images/bg-gradient-tableview-cel.jpg) repeat; -webkit-border-radius: 0',
+                text: 'Restaurants'
+            },
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '77px',
+                id: 'btnCinemas',
+                style: 'background: url(resources/images/bg-gradient-tableview-cel.jpg) repeat; -webkit-border-radius: 0',
+                text: 'Cinemas'
+            },
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '70px',
+                id: 'btnEvents',
+                style: 'background: url(resources/images/bg-gradient-tableview-cel.jpg) repeat; -webkit-border-radius: 0',
+                text: 'Events'
+            },
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '70px',
+                id: 'btnCropOverBands',
+                style: 'background: url(resources/images/bg-gradient-tableview-cel.jpg) repeat; -webkit-border-radius: 0',
+                text: 'Crop Over Bands'
+            },
+            {
+                xtype: 'button',
+                border: 0,
+                docked: 'top',
+                height: '70px',
+                id: 'btnConcerts',
+                style: 'background: url(resources/images/bg-gradient-tableview-cel.jpg) repeat; -webkit-border-radius: 0',
+                text: 'Concerts'
+            }
+        ]
     }
 
 });
